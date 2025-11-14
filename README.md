@@ -50,4 +50,5 @@ Após configurar o repositório no GitHub:
 3. Acompanhe a aba **Actions** para ver as pipelines rodando;
 4. Quando o Pages estiver configurado, coloque aqui o link do site:
 
-**URL do site publicado:** `https://seu-usuario.github.io/seu-repositorio/`
+**URL do site publicado:** `https://Rodrigo117-ops.github.io/CI-CD/`
+
