@@ -27,7 +27,7 @@ jobs:
         run: npm run lint
 
       - name: Rodar testes
-        run: npm run test -- --runInBand=false
+        run: npm run test
 
       - name: Rodar build
         run: npm run build
