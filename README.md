@@ -1,54 +1,166 @@
-# Exemplo de CI/CD com React + Vite e GitHub Actions
+🌐 Projeto CI/CD – React + Vite + GitHub Actions
 
-Este repositório demonstra uma pipeline completa de **Integração Contínua (CI)** e **Entrega Contínua (CD)** para uma aplicação front-end usando **React + Vite**.
+Este projeto demonstra a implementação completa de uma pipeline de Integração Contínua (CI) e Entrega Contínua (CD) utilizando GitHub Actions, aplicada em uma aplicação front-end criada com React + Vite.
 
-## Tecnologias
+A pipeline foi configurada para validar, testar, compilar e publicar automaticamente o projeto no GitHub Pages sempre que houver um push para a branch main.
 
-- React 18
-- Vite 5
-- Vitest + Testing Library
-- ESLint
-- GitHub Actions
-- GitHub Pages (deploy)
+📌 Objetivo do Projeto
 
-## Scripts principais
+Implementar um fluxo profissional de CI/CD contendo:
 
-```bash
-npm ci          # instala dependências (usado na pipeline)
-npm run lint    # roda ESLint
-npm run test    # roda testes com Vitest
-npm run build   # gera build de produção
-npm run dev     # roda o projeto localmente
-```
+✔️ Validação de código com ESLint
 
-## Workflows
+✔️ Execução de testes automatizados com Vitest
 
-### 1. CI - `.github/workflows/ci.yml`
+✔️ Build da aplicação
 
-Executado em todo **push** ou **pull request** na branch `main`:
+✔️ Deploy automático no GitHub Pages
 
-1. Instala dependências com `npm ci`;
-2. Roda `npm run lint`;
-3. Roda `npm run test`;
-4. Roda `npm run build`.
+✔️ Execução automática a cada push no repositório
 
-### 2. Deploy - `.github/workflows/deploy-gh-pages.yml`
+Este fluxo garante qualidade contínua do código e publicação imediata de novas versões.
 
-Executado em todo **push** na branch `main`:
+🚀 Tecnologias Utilizadas
+Frontend
 
-1. Faz o build da aplicação;
-2. Publica o conteúdo da pasta `dist` no **GitHub Pages** usando o `GITHUB_TOKEN` automático.
+React 18
 
-> ⚠️ No GitHub, você ainda precisa ir em **Settings → Pages** e configurar a publicação a partir de **GitHub Actions**.
+Vite
 
-## Publicação
+CSS puro
 
-Após configurar o repositório no GitHub:
+Ferramentas de Qualidade
 
-1. Suba o código (incluindo a pasta `.github/workflows`);
-2. Faça um push na branch `main`;
-3. Acompanhe a aba **Actions** para ver as pipelines rodando;
-4. Quando o Pages estiver configurado, coloque aqui o link do site:
+ESLint
 
-**URL do site publicado:** `https://Rodrigo117-ops.github.io/CI-CD/`
+Testing Library
 
+Vitest
+
+CI/CD
+
+GitHub Actions
+
+GitHub Pages
+
+🔧 Scripts Principais
+
+No terminal:
+
+npm install       # instala dependências
+npm run dev       # roda o servidor local de desenvolvimento
+npm run lint      # executa o ESLint
+npm run test      # executa os testes Vitest
+npm run build     # gera build de produção
+
+🤖 Integração Contínua (CI)
+
+Todo push ou pull request para a branch main dispara o workflow:
+
+📄 .github/workflows/ci.yml
+
+Esse workflow executa:
+
+✔️ 1. Instalação das dependências
+npm ci
+
+✔️ 2. Lint do código
+npm run lint
+
+✔️ 3. Testes automatizados
+npm run test
+
+✔️ 4. Build da aplicação
+npm run build
+
+
+Se qualquer etapa falhar, a pipeline é interrompida e o commit é marcado como ❌.
+
+📦 Entrega Contínua (CD)
+
+Sempre que um push é feito na main, ocorre o deploy automático através do workflow:
+
+📄 .github/workflows/deploy-gh-pages.yml
+
+Ele executa:
+
+✔️ Build da aplicação
+✔️ Publicação automática em GitHub Pages
+✔️ Deploy sem intervenção manual
+🌍 Site Publicado
+
+A versão mais recente da aplicação pode ser acessada em:
+
+👉 https://rodrigo117-ops.github.io/CI-CD/
+
+(Deploy automático via GitHub Actions.)
+
+🗂️ Estrutura do Projeto
+CI-CD/
+ ├── src/
+ │    ├── App.jsx
+ │    ├── App.css
+ │    ├── main.jsx
+ │    ├── App.test.jsx
+ │    └── setupTests.js
+ ├── public/
+ ├── index.html
+ ├── vite.config.js
+ ├── package.json
+ ├── package-lock.json
+ ├── .eslintignore
+ ├── .eslintrc.cjs
+ └── .github/
+      └── workflows/
+            ├── ci.yml
+            └── deploy-gh-pages.yml
+
+🧪 Testes Automatizados
+
+Os testes utilizam:
+
+Vitest
+
+React Testing Library
+
+jest-dom (versão compatível com Vitest)
+
+O teste atual verifica se o título principal da página é renderizado corretamente.
+
+📥 Como Rodar Localmente
+
+Clonar o repositório:
+
+git clone https://github.com/Rodrigo117-ops/CI-CD.git
+
+
+Entrar na pasta:
+
+cd CI-CD
+
+
+Instalar dependências:
+
+npm install
+
+
+Rodar o projeto:
+
+npm run dev
+
+
+A aplicação estará no ar em:
+
+👉 http://localhost:5173/
+
+✅ Status Atual da Pipeline
+
+🟩 CI funcionando (lint → test → build)
+
+🟩 Deploy funcionando
+
+🟩 GitHub Pages ativo
+
+🟩 Site acessível
+
+Projeto concluído com sucesso e pronto para avaliação ✔️
