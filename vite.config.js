@@ -1,12 +1,11 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// vite.config.js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/CI-CD/',        
   plugins: [react()],
-  test: {
-    environment: 'jsdom',
-    setupFiles: './src/setupTests.js',
-    globals: true         
-  }
-})
+  build: {
+    minify: 'esbuild',      // minificação de JS
+    cssMinify: true,        // minificação de CSS (Vite 6+)
+  },
+});
