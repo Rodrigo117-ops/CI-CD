@@ -1,106 +1,110 @@
 🚀 Pipeline CI/CD com React + Vite + GitHub Actions
 Otimização de Performance com Lighthouse / PageSpeed Insights
 
-Este projeto demonstra uma pipeline completa de CI/CD utilizando React + Vite com GitHub Actions para integração contínua, testes automatizados, build de produção e deploy automático no GitHub Pages.
+Este projeto demonstra uma pipeline completa de CI/CD utilizando React + Vite com GitHub Actions, incluindo:
+
+✔ Lint automatizado
+✔ Testes automatizados com Vitest
+✔ Build de produção minificado
+✔ Deploy automático no GitHub Pages
+✔ Otimização de performance analisada com PageSpeed Insights
 
 Além disso, o projeto passou por um processo de otimização de performance, com análise antes/depois, correção de gargalos e documentação detalhada.
 
 📌 1. Descrição Geral do Projeto
 
-Front-end em React 18 com Vite
+Framework: React 18
 
-Pipeline completa via GitHub Actions (CI → CD)
+Bundler: Vite
 
-Deploy automático no GitHub Pages
+CI/CD: GitHub Actions
 
-Testes automatizados com Vitest + Testing Library
+Deploy: GitGitHub Pages
 
-ESLint configurado para manter código limpo
+Testes: Vitest + Testing Library
 
-Código otimizado e minificado para alta performance
+Qualidade: ESLint configurado e sem erros
 
-Análise de desempenho via PageSpeed Insights
+Otimizações: Minificação, limpeza de CSS/JS, build enxuto
+
+Análise: PageSpeed Insights (mobile + desktop)
 
 🌐 URL publicada:
 https://rodrigo117-ops.github.io/CI-CD/
 
-📁 Relatórios de análise antes/depois estão em:
-/docs/
+📁 Relatórios de análise antes/depois:
+Localizados em: ./docs/
 
 🔍 2. Gargalos Identificados (Antes da Otimização)
 
 Relatórios completos:
-docs/antes-mobile.pdf
-docs/antes-desktop.pdf
+
+docs/antescelular.pdf
+docs/antescomputador.pdf
+docs/depoiscelular.pdf
+docs/depoiscomputador.pdf
 
 📱 Mobile — Antes
+Métrica	Nota
+Performance	65
+Acessibilidade	98
+Boas práticas	100
+SEO	100
 
-Performance: 65
+Principais problemas encontrados:
 
-Acessibilidade: 98
+JavaScript acima do necessário
 
-Boas práticas: 100
+CSS com estilos não utilizados
 
-SEO: 100
+LCP e FCP lentos devido ao bundle pesado
 
-Principais problemas:
+Layout mais robusto que o necessário
 
-JavaScript acima do necessário para uma página estática
-
-CSS contendo estilos não utilizados
-
-LCP e FCP prejudicados por bundle desnecessariamente grande
-
-Layout mais pesado do que o ideal
-
-Alertas do Lighthouse sobre unused JS/CSS
+Alertas do Lighthouse sobre Unused JS/CSS
 
 🖥️ Desktop — Antes
-
-Performance: 97
-
-Acessibilidade: 98
-
-Boas práticas: 100
-
-SEO: 100
-
+Métrica	Nota
+Performance	97
+Acessibilidade	98
+Boas práticas	100
+SEO	100
 Principais problemas:
 
-Bundle maior do que o necessário
+Bundle maior que o necessário
 
 Estilos sobrando no CSS
 
-Componentes React mais pesados do que a demanda real do projeto
+Componente React mais complexo que o necessário
 
 🛠️ 3. Melhorias Aplicadas
 🔹 3.1 Simplificação do React
 
-Remoção de useState, useEffect e lógicas desnecessárias
+Remoção de useState, useEffect e lógica desnecessária
 
-Componente principal transformado em estático e leve
+Componente principal transformado em estático
 
-Remoção de imports não usados
+Remoção de imports mortos
 
-Exclusão de componentes não renderizados
+Exclusão de componentes não usados
 
-📍 Resultado: menos JS enviado ao navegador → renderização mais rápida
+📌 Impacto: Menos JS → renderização mais rápida.
 
 🔹 3.2 Otimização do CSS
 
-Revisão total do App.css
+Revisão completa do App.css
 
-Remoção de classes não utilizadas
+Remoção de estilos não utilizados
 
-Padronização visual com poucos estilos essenciais
+Uso de fontes nativas (system-ui)
 
-Substituição de fontes externas por fontes nativas (system-ui)
+CSS final extremamente pequeno
 
-📍 Resultado: CSS menor → menor tempo de bloqueio → Lighthouse mais alto
+📌 Impacto: Menos bytes → melhor FCP/LCP.
 
 🔹 3.3 Build de Produção Otimizado
 
-Ajustes no vite.config.js:
+Trecho do vite.config.js:
 
 build: {
   minify: 'esbuild',
@@ -119,9 +123,6 @@ HTML otimizado
 Bundle final extremamente leve
 
 🔹 3.4 HTML limpo e sem bloqueios
-
-index.html contém APENAS o essencial:
-
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Exemplo CI/CD com React + Vite</title>
@@ -135,52 +136,84 @@ CSS externo
 
 Scripts remotos
 
-Recursos bloqueadores (render-blocking)
+Recursos bloqueadores
 
-🔹 3.5 Garantia de Qualidade (Lint + Testes)
-
-Lint executado:
-
+🔹 3.5 Garantia de Qualidade
 npm run lint
 
 
-Resultado:
-
-✔ Nenhum aviso (0 warnings)
-
-✔ Nenhum erro (0 errors)
-
+✔ 0 warnings
+✔ 0 errors
 ✔ Código padronizado
 
 📊 4. Comparativo Antes vs Depois
-📱 Mobile
-Métrica	Antes	Depois
-Performance	65	99
-Acessibilidade	98	100
-Boas práticas	100	100
-SEO	100	90
-🖥️ Desktop
-Métrica	Antes	Depois
-Performance	97	100
-Acessibilidade	98	100
-Boas práticas	100	100
-SEO	100	90
+
+## 📱 Comparação Mobile (Antes vs Depois)
+
+| 🔍 Métrica        | ❌ Antes | ✅ Depois |
+|------------------|:--------:|:---------:|
+| **Performance**   | 65       | **99**    |
+| **Acessibilidade**| 98       | **100**   |
+| **Boas práticas** | 100      | **100**   |
+| **SEO**           | 100      | **90**    |
+
+## 🖥️ Comparação Desktop (Antes vs Depois)
+
+| 🔍 Métrica        | ❌ Antes | ✅ Depois |
+|------------------|:--------:|:---------:|
+| **Performance**   | 97       | **100**   |
+| **Acessibilidade**| 98       | **100**   |
+| **Boas práticas** | 100      | **100**   |
+| **SEO**           | 100      | **90**    |
+
+## ⚠️ Gargalos Antes da Otimização
+
+| Gargalo                       | Impacto no Desempenho |
+|------------------------------|------------------------|
+| JS acima do necessário       | Lentidão no FCP/LCP    |
+| CSS com estilos não usados   | Renderização mais lenta|
+| Bundle maior que o ideal     | Piora no carregamento  |
+| Layout mais pesado           | Performance reduzida   |
+| Unused JS/CSS no Lighthouse  | Notas menores          |
+
+## 🚀 Melhorias Aplicadas
+
+| Otimização                       | Resultado                                   |
+|----------------------------------|---------------------------------------------|
+| Simplificação do React           | Menos JS → renderização mais rápida         |
+| Limpeza completa do CSS          | CSS menor → melhoria no FCP/LCP             |
+| Minificação do build (JS/CSS)    | Bundle final muito mais leve                |
+| HTML sem recursos bloqueadores   | FCP muito mais rápido                       |
+| Ajuste de configurações do Vite  | Build mais eficiente e otimizado            |
+
+## ⭐ Impacto das Otimizações
+
+| Área              | Ganho Obtido                           |
+|-------------------|-----------------------------------------|
+| **Mobile**        | 65 → **99** (+34 pontos)                |
+| **Desktop**       | 97 → **100** (+3 pontos)                |
+| **JS reduzido**   | Carregamento mais rápido                |
+| **CSS limpo**     | Renderização mais eficiente             |
+| **Sem bloqueios** | Página exibida mais rapidamente         |
+
+
 🧠 4.3 Melhorias de Maior Impacto
-✔️ Redução massiva de JavaScript
 
-Página passou a utilizar apenas o essencial → carregamento muito mais rápido.
+✔ Redução agressiva do JavaScript
 
-✔️ CSS limpo e sem estilos mortos
+✔ CSS extremamente enxuto
 
-Reduziu o peso total do CSS e melhorou o tempo de renderização.
+✔ Minificação completa do bundle
 
-✔️ Build minificado do Vite
+✔ HTML sem recursos bloqueadores
 
-Bundle final extremamente leve e otimizado.
+✔ Arquitetura simplificada do React
 
-✔️ HTML sem bloqueios
+📌 Resultados finais:
 
-Nada externo atrasando FCP ou LCP.
+Mobile: 65 → 99
+
+Desktop: 97 → 100
 
 🚀 5. Como Rodar o Projeto Localmente
 Instalar dependências:
@@ -200,7 +233,9 @@ Testar o build:
 npm run preview
 
 🤖 6. CI/CD — Fluxo Completo
-A cada push na branch main:
+
+A cada push para main:
+
 CI
 
 Lint → npm run lint
@@ -218,13 +253,31 @@ Deploy automático no GitHub Pages
 Workflows em:
 
 .github/workflows/
-  ci.yml
-  deploy.yml
+  ├── ci.yml
+  └── deploy.yml
 
 📁 7. Documentos Incluídos
 
-Localizados em /docs/:
+Localizados na pasta /docs/:
 
-🔍 Relatórios antes de otimizar (mobile & desktop)
+📄 Relatórios antes (mobile + desktop)
 
-⚡ Relatórios depois de otimizar (mobile & desktop)
+📄 Relatórios depois (mobile + desktop)
+
+🖼️ Prints (opcionais)
+
+🎉 Conclusão
+
+Após todas as otimizações:
+
+O projeto ficou extremamente leve
+
+A performance atingiu 99–100
+
+Acessibilidade e boas práticas foram para 100
+
+Pipeline CI/CD funcionando perfeitamente
+
+Código limpo, minificado e pronto para produção
+
+✔ Projeto concluído com sucesso e pronto para avaliação! 🚀
