@@ -1,166 +1,230 @@
-🌐 Projeto CI/CD – React + Vite + GitHub Actions
+🚀 Pipeline CI/CD com React + Vite + GitHub Actions
+Otimização de Performance com Lighthouse / PageSpeed Insights
 
-Este projeto demonstra a implementação completa de uma pipeline de Integração Contínua (CI) e Entrega Contínua (CD) utilizando GitHub Actions, aplicada em uma aplicação front-end criada com React + Vite.
+Este projeto demonstra uma pipeline completa de CI/CD utilizando React + Vite com GitHub Actions para integração contínua, testes automatizados, build de produção e deploy automático no GitHub Pages.
 
-A pipeline foi configurada para validar, testar, compilar e publicar automaticamente o projeto no GitHub Pages sempre que houver um push para a branch main.
+Além disso, o projeto passou por um processo de otimização de performance, com análise antes/depois, correção de gargalos e documentação detalhada.
 
-📌 Objetivo do Projeto
+📌 1. Descrição Geral do Projeto
 
-Implementar um fluxo profissional de CI/CD contendo:
+Front-end em React 18 com Vite
 
-✔️ Validação de código com ESLint
+Pipeline completa via GitHub Actions (CI → CD)
 
-✔️ Execução de testes automatizados com Vitest
+Deploy automático no GitHub Pages
 
-✔️ Build da aplicação
+Testes automatizados com Vitest + Testing Library
 
-✔️ Deploy automático no GitHub Pages
+ESLint configurado para manter código limpo
 
-✔️ Execução automática a cada push no repositório
+Código otimizado e minificado para alta performance
 
-Este fluxo garante qualidade contínua do código e publicação imediata de novas versões.
+Análise de desempenho via PageSpeed Insights
 
-🚀 Tecnologias Utilizadas
-Frontend
+🌐 URL publicada:
+https://rodrigo117-ops.github.io/CI-CD/
 
-React 18
+📁 Relatórios de análise antes/depois estão em:
+/docs/
 
-Vite
+🔍 2. Gargalos Identificados (Antes da Otimização)
 
-CSS puro
+Relatórios completos:
+docs/antes-mobile.pdf
+docs/antes-desktop.pdf
 
-Ferramentas de Qualidade
+📱 Mobile — Antes
 
-ESLint
+Performance: 65
 
-Testing Library
+Acessibilidade: 98
 
-Vitest
+Boas práticas: 100
 
-CI/CD
+SEO: 100
 
-GitHub Actions
+Principais problemas:
 
-GitHub Pages
+JavaScript acima do necessário para uma página estática
 
-🔧 Scripts Principais
+CSS contendo estilos não utilizados
 
-No terminal:
+LCP e FCP prejudicados por bundle desnecessariamente grande
 
-npm install       # instala dependências
-npm run dev       # roda o servidor local de desenvolvimento
-npm run lint      # executa o ESLint
-npm run test      # executa os testes Vitest
-npm run build     # gera build de produção
+Layout mais pesado do que o ideal
 
-🤖 Integração Contínua (CI)
+Alertas do Lighthouse sobre unused JS/CSS
 
-Todo push ou pull request para a branch main dispara o workflow:
+🖥️ Desktop — Antes
 
-📄 .github/workflows/ci.yml
+Performance: 97
 
-Esse workflow executa:
+Acessibilidade: 98
 
-✔️ 1. Instalação das dependências
-npm ci
+Boas práticas: 100
 
-✔️ 2. Lint do código
+SEO: 100
+
+Principais problemas:
+
+Bundle maior do que o necessário
+
+Estilos sobrando no CSS
+
+Componentes React mais pesados do que a demanda real do projeto
+
+🛠️ 3. Melhorias Aplicadas
+🔹 3.1 Simplificação do React
+
+Remoção de useState, useEffect e lógicas desnecessárias
+
+Componente principal transformado em estático e leve
+
+Remoção de imports não usados
+
+Exclusão de componentes não renderizados
+
+📍 Resultado: menos JS enviado ao navegador → renderização mais rápida
+
+🔹 3.2 Otimização do CSS
+
+Revisão total do App.css
+
+Remoção de classes não utilizadas
+
+Padronização visual com poucos estilos essenciais
+
+Substituição de fontes externas por fontes nativas (system-ui)
+
+📍 Resultado: CSS menor → menor tempo de bloqueio → Lighthouse mais alto
+
+🔹 3.3 Build de Produção Otimizado
+
+Ajustes no vite.config.js:
+
+build: {
+  minify: 'esbuild',
+  cssMinify: true
+}
+
+
+📦 Resultados:
+
+JS minificado
+
+CSS minificado
+
+HTML otimizado
+
+Bundle final extremamente leve
+
+🔹 3.4 HTML limpo e sem bloqueios
+
+index.html contém APENAS o essencial:
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Exemplo CI/CD com React + Vite</title>
+
+
+Sem:
+
+Google Fonts
+
+CSS externo
+
+Scripts remotos
+
+Recursos bloqueadores (render-blocking)
+
+🔹 3.5 Garantia de Qualidade (Lint + Testes)
+
+Lint executado:
+
 npm run lint
 
-✔️ 3. Testes automatizados
-npm run test
 
-✔️ 4. Build da aplicação
-npm run build
+Resultado:
 
+✔ Nenhum aviso (0 warnings)
 
-Se qualquer etapa falhar, a pipeline é interrompida e o commit é marcado como ❌.
+✔ Nenhum erro (0 errors)
 
-📦 Entrega Contínua (CD)
+✔ Código padronizado
 
-Sempre que um push é feito na main, ocorre o deploy automático através do workflow:
+📊 4. Comparativo Antes vs Depois
+📱 Mobile
+Métrica	Antes	Depois
+Performance	65	99
+Acessibilidade	98	100
+Boas práticas	100	100
+SEO	100	90
+🖥️ Desktop
+Métrica	Antes	Depois
+Performance	97	100
+Acessibilidade	98	100
+Boas práticas	100	100
+SEO	100	90
+🧠 4.3 Melhorias de Maior Impacto
+✔️ Redução massiva de JavaScript
 
-📄 .github/workflows/deploy-gh-pages.yml
+Página passou a utilizar apenas o essencial → carregamento muito mais rápido.
 
-Ele executa:
+✔️ CSS limpo e sem estilos mortos
 
-✔️ Build da aplicação
-✔️ Publicação automática em GitHub Pages
-✔️ Deploy sem intervenção manual
-🌍 Site Publicado
+Reduziu o peso total do CSS e melhorou o tempo de renderização.
 
-A versão mais recente da aplicação pode ser acessada em:
+✔️ Build minificado do Vite
 
-👉 https://rodrigo117-ops.github.io/CI-CD/
+Bundle final extremamente leve e otimizado.
 
-(Deploy automático via GitHub Actions.)
+✔️ HTML sem bloqueios
 
-🗂️ Estrutura do Projeto
-CI-CD/
- ├── src/
- │    ├── App.jsx
- │    ├── App.css
- │    ├── main.jsx
- │    ├── App.test.jsx
- │    └── setupTests.js
- ├── public/
- ├── index.html
- ├── vite.config.js
- ├── package.json
- ├── package-lock.json
- ├── .eslintignore
- ├── .eslintrc.cjs
- └── .github/
-      └── workflows/
-            ├── ci.yml
-            └── deploy-gh-pages.yml
+Nada externo atrasando FCP ou LCP.
 
-🧪 Testes Automatizados
-
-Os testes utilizam:
-
-Vitest
-
-React Testing Library
-
-jest-dom (versão compatível com Vitest)
-
-O teste atual verifica se o título principal da página é renderizado corretamente.
-
-📥 Como Rodar Localmente
-
-Clonar o repositório:
-
-git clone https://github.com/Rodrigo117-ops/CI-CD.git
-
-
-Entrar na pasta:
-
-cd CI-CD
-
-
+🚀 5. Como Rodar o Projeto Localmente
 Instalar dependências:
-
 npm install
 
-
 Rodar o projeto:
-
 npm run dev
 
 
-A aplicação estará no ar em:
-
+A aplicação estará em:
 👉 http://localhost:5173/
 
-✅ Status Atual da Pipeline
+Gerar build de produção:
+npm run build
 
-🟩 CI funcionando (lint → test → build)
+Testar o build:
+npm run preview
 
-🟩 Deploy funcionando
+🤖 6. CI/CD — Fluxo Completo
+A cada push na branch main:
+CI
 
-🟩 GitHub Pages ativo
+Lint → npm run lint
 
-🟩 Site acessível
+Testes → npm run test
 
-Projeto concluído com sucesso e pronto para avaliação ✔️
+Build → npm run build
+
+CD
+
+Se tudo passar:
+
+Deploy automático no GitHub Pages
+
+Workflows em:
+
+.github/workflows/
+  ci.yml
+  deploy.yml
+
+📁 7. Documentos Incluídos
+
+Localizados em /docs/:
+
+🔍 Relatórios antes de otimizar (mobile & desktop)
+
+⚡ Relatórios depois de otimizar (mobile & desktop)
