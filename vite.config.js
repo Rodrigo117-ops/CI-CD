@@ -4,8 +4,9 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  base: '/CI-CD/', 
   build: {
-    minify: 'esbuild',      // minificação de JS
-    cssMinify: true,        // minificação de CSS (Vite 6+)
+    minify: 'esbuild',
+    cssMinify: true,
   },
 });
